@@ -1,0 +1,33 @@
+.primary-button {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--secondary-color);
+}
+
+.secondary-button {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--primary-color);
+
+    /* text underline */
+    text-decoration: underline;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+    background: var(--selected-color);
+}

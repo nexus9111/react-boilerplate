@@ -1,0 +1,49 @@
+.navbar {
+    margin-bottom: 6em;
+    /* no background */
+    background: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    flex: column;
+    justify-content: center;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.navbar-section-mid {
+    width: 100%;
+}
+
+.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.navbar-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-sections {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-logo {
+    height: 50px;
+}
+
+.ant-menu-item-selected {
+    background-color: var(--selected-color) !important;
+}

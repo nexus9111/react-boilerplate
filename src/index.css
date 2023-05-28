@@ -1,0 +1,24 @@
+:root {
+  font-family: "Poppins";
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --text-color: #021715;
+  --background-color: #fafffe;
+  --primary-color: #0d4d78;
+  --selected-color: #14679f;
+  --secondary-color: #ffffff;
+  --accent-color: #03051c;
+
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,12 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 20px;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 600px;
+}
