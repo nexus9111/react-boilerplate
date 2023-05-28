@@ -27,7 +27,6 @@
     text-decoration: underline;
 }
 
-.primary-button:hover,
-.secondary-button:hover {
+.primary-button:hover {
     background: var(--selected-color);
 }
