@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { Layout, Menu } from "antd";
+import { Layout, Dropdown, Menu, Button } from "antd";
 import { useSetRecoilState } from "recoil";
+import { useState, useEffect } from "react";
+import { MenuUnfoldOutlined } from "@ant-design/icons";
 
 import { authToken } from "../../../helpers/store/token";
 
@@ -16,6 +18,13 @@ type NavItem = {
 const NavBar = () => {
     const navigate = useNavigate();
     const setToken = useSetRecoilState(authToken);
+    const [mobileSize, setMobileSize] = useState(false);
+
+    useEffect(() => {
+        if (window.innerWidth < 768) {
+            setMobileSize(true);
+        }
+    }, []);
 
     const navList: NavItem[] = [
         {
@@ -44,6 +53,16 @@ const NavBar = () => {
         },
     ];
 
+    const mobileMenu = (
+        <Menu>
+            {navList.map((item) => (
+                <Menu.Item key={item.key} onClick={item.onClick}>
+                    {item.label}
+                </Menu.Item>
+            ))}
+        </Menu>
+    );
+
     return (
         <Layout className="navbar">
             <Layout.Header className="nav-header">
@@ -51,14 +70,23 @@ const NavBar = () => {
                     <div className="navbar-section">
                         <img src="/icon.svg" className="navbar-logo" />
                     </div>
-                    <div className="navbar-section-mid">
-                        <Menu
-                            className="nav-menu"
-                            theme="dark"
-                            mode="horizontal"
-                            items={navList}
-                        />
-                    </div>
+
+                    {!mobileSize ? (
+                        <div className="navbar-section-mid">
+                            <Menu
+                                className="nav-menu"
+                                theme="dark"
+                                mode="horizontal"
+                                items={navList}
+                            />
+                        </div>
+                    ) : (
+                        <div className="navbar-section-mid">
+                            <Dropdown overlay={mobileMenu} trigger={['click']}>
+                                <Button icon={<MenuUnfoldOutlined />} className="navbar-dropdown-button" />
+                            </Dropdown>
+                        </div>
+                    )}
                     <Menu
                         className="nav-menu"
                         theme="dark"

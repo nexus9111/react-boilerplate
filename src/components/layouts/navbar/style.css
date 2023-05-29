@@ -47,3 +47,9 @@
 .ant-menu-item-selected {
     background-color: var(--selected-color) !important;
 }
+
+.navbar-dropdown-button {
+    color: #fff !important;
+    background-color: transparent;
+    border: none;
+}
